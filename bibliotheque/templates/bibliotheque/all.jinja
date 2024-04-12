@@ -1,0 +1,12 @@
+{% extends "main.jinja" %}
+
+{% block title %}Livres{% endblock %}
+
+{% block body %}
+    {% for book in livres %}
+        <p>{{ book.titre }} - {{ book.auteur }} | </p>
+            <a href="/bibliotheque/{{ book.pk }}"><button>voir info</button></a>
+            <a href="/bibliotheque/update/{{ book.pk }}"><button>éditer N.{{ book.pk }}</button></a>
+            <a href="/bibliotheque/api/delete/{{ book.pk }}"><button>supprimer N.{{ book.pk }}</button></a>
+    {% endfor %}
+{% endblock %}

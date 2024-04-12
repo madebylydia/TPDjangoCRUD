@@ -1,0 +1,24 @@
+{% extends "main.jinja" %}
+
+{% block title %}Information du livre{% endblock %}
+
+{% block body %}
+<p>ID : {{ livre.id }}</p>
+
+<p>Titre : {{ livre.titre }}</p>
+
+<p>Auteur : {{ livre.auteur }}</p>
+
+<p>Date de publication : {{ livre.date_publication }}</p>
+
+<p>Nombre de page : {{ livre.nombre_pages }}</p>
+
+{% if livre.resume %}
+    <p>Résumé : {{ livre.resume }}</p>
+{% else %}
+    <p>Pas de résumé.</p>
+{% endif %}
+
+<a href="/bibliotheque/update/{{ livre.id }}"><button>Éditer le livre</button></a>
+
+{% endblock %}
