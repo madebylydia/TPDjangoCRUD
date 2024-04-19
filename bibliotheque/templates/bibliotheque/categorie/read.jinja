@@ -1,0 +1,13 @@
+{% extends "skeletons/categorie.jinja" %}
+
+{% block title %}Information de la catégorie{% endblock %}
+
+{% block body %}
+<p>ID : {{ categorie.pk }}</p>
+
+<p>Nom : {{ categorie.nom }}</p>
+
+<p>Description : {{ categorie.description }}</p>
+
+<a href="/bibliotheque/categorie/update/{{ livre.id }}"><button>Éditer la catégorie</button></a>
+{% endblock %}

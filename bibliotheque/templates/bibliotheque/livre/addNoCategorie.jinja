@@ -1,0 +1,12 @@
+{% extends "skeletons/livre.jinja" %}
+
+{% block title %}Ajouter un livre{% endblock %}
+
+{% block body %}
+<h1>Ajouter un livre</h1>
+<form method="post" action="/bibliotheque/api/livre/fromcategorie/{{ categorie_id }}/">
+    {% csrf_token %}
+    {{ livre.as_ul }}
+    <input type="submit" value="Créer livre" />
+</form>
+{% endblock %}

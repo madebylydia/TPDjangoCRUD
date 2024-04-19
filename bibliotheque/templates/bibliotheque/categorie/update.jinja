@@ -1,0 +1,12 @@
+{% extends "skeletons/categorie.jinja" %}
+
+{% block title %}Mettre à jour une catégorie{% endblock %}
+
+{% block body %}
+<h1>Mettre à jour une catégorie</h1>
+<form method="post" action="/bibliotheque/api/categorie/update/{{ categorie_id }}/">
+    {% csrf_token %}
+    {{ categorie.as_ul }}
+    <input type="submit" value="Mettre à jour">
+</form>
+{% endblock %}

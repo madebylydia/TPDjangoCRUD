@@ -1,4 +1,4 @@
-{% extends "main.jinja" %}
+{% extends "skeletons/livre.jinja" %}
 
 {% block title %}Information du livre{% endblock %}
 
@@ -19,6 +19,6 @@
     <p>Pas de résumé.</p>
 {% endif %}
 
-<a href="/bibliotheque/update/{{ livre.id }}"><button>Éditer le livre</button></a>
+<a href="/bibliotheque/livre/update/{{ livre.id }}"><button>Éditer le livre</button></a>
 
 {% endblock %}

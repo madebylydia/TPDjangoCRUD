@@ -1,14 +1,12 @@
-{% extends "main.jinja" %}
+{% extends "skeletons/livre.jinja" %}
 
 {% block title %}Mettre à jour un livre{% endblock %}
 
 {% block body %}
 <h1>Mettre à jour un livre</h1>
-{{ livre.id }}
-<form method="post" action="/bibliotheque/api/update/{{ id }}/">
+<form method="post" action="/bibliotheque/api/livre/update/{{ id }}/">
     {% csrf_token %}
-
     {{ livre.as_ul }}
-    <input type="submit" value="Envoyer les données">
+    <input type="submit" value="Mettre à jour">
 </form>
 {% endblock %}

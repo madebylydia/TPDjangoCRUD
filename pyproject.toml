@@ -1,0 +1,38 @@
+[project]
+name = "TPDjangoCrud"
+version = "0.0.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "Julien Mauroy", email = "pro.julien.mauroy@gmail.com"},
+]
+dependencies = [
+    "django>=5.0.4",
+]
+requires-python = ">=3.12"
+readme = "README.md"
+license = {text = "MIT"}
+
+
+[tool.pdm]
+distribution = false
+
+[tool.pdm.dev-dependencies]
+dev = [
+    "black>=24.3.0",
+    "isort>=5.13.2",
+]
+
+[tool.pdm.scripts]
+_format_black = "black ."
+_format_isort = "isort ."
+format = { composite = ["_format_black", "_format_isort"], help = "Format the source files (black, isort)" }
+dev = { cmd = "python manage.py runserver", help = "Launch a Django development server", working_dir = "." }
+
+[tool.black]
+target-version = [
+    "py312",
+]
+line-length = 99
+
+[tool.isort]
+profile = "black"

@@ -14,16 +14,19 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
 from django.http import HttpRequest
 from django.shortcuts import redirect
 from django.urls import include, path
 
+
 def redirect_wrapper(request: HttpRequest):
-    return redirect('/bibliotheque/')
+    return redirect("/bibliotheque/")
+
 
 urlpatterns = [
-    path('', redirect_wrapper),
-    path('bibliotheque/', include('bibliotheque.urls')),
-    path('admin/', admin.site.urls),
+    path("", redirect_wrapper),
+    path("bibliotheque/", include("bibliotheque.urls")),
+    path("admin/", admin.site.urls),
 ]

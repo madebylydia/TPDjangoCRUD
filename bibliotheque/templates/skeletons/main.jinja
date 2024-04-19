@@ -10,11 +10,12 @@
     </head>
 
     <body>
+        {% block header %}
         <aside style="text-align: center; padding: 12px; background-color: darkgray; margin-bottom: 10px;">
-            <a href="/bibliotheque">Ajouter un livre</a> -
-            <a href="/bibliotheque/all">Liste des livres</a> -
-            {# <a href="/bibliotheque">Trouver un livre</a> #}
+            <a href="/bibliotheque/livre">Aller aux livres</a> -
+            <a href="/bibliotheque/categorie">Aller aux catégories</a>
         </aside>
+        {% endblock %}
 
         {% block body %}
         {% endblock %}

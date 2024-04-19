@@ -1,0 +1,14 @@
+{% extends "skeletons/categorie.jinja" %}
+
+{% block title %}Catégories{% endblock %}
+
+{% block body %}
+<h1>Catégories</h1>
+{% for categorie in categories %}
+    <p>{{ categorie.pk }} - {{ categorie.nom }} | </p>
+        <a href="/bibliotheque/livre/fromcategorie/{{ categorie.pk }}"><button>Créer un livre de cette catégorie</button></a>
+        <a href="/bibliotheque/categorie/{{ categorie.pk }}"><button>Voir informations</button></a>
+        <a href="/bibliotheque/categorie/update/{{ categorie.pk }}"><button>Modifier catégorie n.{{ categorie.pk }}</button></a>
+        <a href="/bibliotheque/api/categorie/delete/{{ categorie.pk }}"><button>Supprimer catégorie n.{{ categorie.pk }}</button></a>
+{% endfor %}
+{% endblock %}

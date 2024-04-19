@@ -1,0 +1,12 @@
+{% extends 'skeletons/categorie.jinja' %}
+
+{% block title %}Ajouter une catégorie{% endblock %}
+
+{% block body %}
+<h1>Ajouter une catégorie</h1>
+<form method="post" action="/bibliotheque/api/categorie/">
+    {% csrf_token %}
+    {{ categorie.as_ul }}
+    <input type="submit" value="Créer catégorie" />
+</form>
+{% endblock %}
